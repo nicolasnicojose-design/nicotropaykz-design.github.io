@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Meu Buscador</title>
+  <title>Meu Navegador</title>
   <style>
     body {
       background: #111;
       color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      text-align: center;
       font-family: Arial;
+      padding-top: 100px;
+    }
+
+    h1 {
+      font-size: 40px;
     }
 
     input {
@@ -30,20 +31,38 @@
       border-radius: 20px;
       border: none;
       cursor: pointer;
+      margin: 10px;
+    }
+
+    .apps {
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
 
-  <h1>Meu Buscador</h1>
+  <h1>Meu Navegador</h1>
 
   <input id="search" type="text" placeholder="Pesquise aqui...">
-  <button onclick="pesquisar()">Buscar</button>
+  <br>
+  <button onclick="pesquisar()">Buscar no Google</button>
+
+  <div class="apps">
+    <h2>Acessos Rápidos</h2>
+
+    <button onclick="abrir('https://www.youtube.com')">YouTube</button>
+    <button onclick="abrir('https://www.instagram.com')">Instagram</button>
+    <button onclick="abrir('https://chat.openai.com')">ChatGPT</button>
+  </div>
 
   <script>
     function pesquisar() {
       let query = document.getElementById("search").value;
       window.location.href = "https://www.google.com/search?q=" + query;
+    }
+
+    function abrir(url) {
+      window.location.href = url;
     }
   </script>
 
